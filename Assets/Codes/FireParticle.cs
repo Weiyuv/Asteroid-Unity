@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class FireParticle : MonoBehaviour
 {
-    public ParticleSystem particleSystem;
+    public ParticleSystem fireParticleSystem; // Renomeado para evitar conflito
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        // Configurar o módulo de colisão do Particle System
+        var collisionModule = fireParticleSystem.collision;
+        collisionModule.enabled = true; // Certifique-se de que o módulo de colisão está ativado
+        collisionModule.collidesWith = LayerMask.GetMask("Asteroides"); // Defina a camada com a qual as partículas colidem
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKey(KeyCode.X))
         {
@@ -20,13 +22,13 @@ public class FireParticle : MonoBehaviour
         }
     }
 
-    void Fire()
+    private void Fire()
     {
-        particleSystem.Emit(1);
+        fireParticleSystem.Emit(1);
     }
 
-    // Este método é chamado quando outro objeto entra em contato com o objeto que possui este script
-    void OnParticleCollision(GameObject other)
+    // Este método é chamado quando uma partícula colide com um collider
+    private void OnParticleCollision(GameObject other)
     {
         // Destrói o objeto que colidiu com a partícula
         Destroy(other);
