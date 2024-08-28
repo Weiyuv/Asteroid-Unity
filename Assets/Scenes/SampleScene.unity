@@ -2560,7 +2560,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048193925}
   serializedVersion: 8
-  lengthInSec: 1000
+  lengthInSec: 0.1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -2688,7 +2688,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3389,7 +3389,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -7287,7 +7287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40f3329a9d2e3a438cd9e8f8fb4ed67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 2048193928}
+  fireParticleSystem: {fileID: 2048193928}
 --- !u!4 &2280007362596800982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5472426772708884864, guid: 827ac5baf91f6c44fafaf78dc6cf53ce, type: 3}
@@ -7381,6 +7381,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1185762970007373958, guid: 827ac5baf91f6c44fafaf78dc6cf53ce, type: 3}
       propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497044819200302475, guid: 827ac5baf91f6c44fafaf78dc6cf53ce, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4454748246218925562, guid: 827ac5baf91f6c44fafaf78dc6cf53ce, type: 3}
